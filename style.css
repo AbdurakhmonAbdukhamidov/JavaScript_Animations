@@ -30,3 +30,11 @@ section{
     height: 100vh;
     background: yellow;
 }
+
+section:nth-child(2){
+    background: #000;
+}
+
+section:nth-child(3){
+    background: rgba(255, 8, 255, 0.867);
+}
