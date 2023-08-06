@@ -6,6 +6,8 @@ let first = document.querySelector("#third");
 let bodyHeight = window.getComputedStyle(body).height
 let title = document.querySelectorAll('.title')
 const hour = document.querySelector('.hour');
+const gas = document.querySelector('.lets_go');
+const car = document.querySelector('.car');
 
 
 
@@ -38,6 +40,25 @@ setInterval(()=>{
   hour.innerText = time.getHours() +":"+time.getMinutes()+":"+time.getSeconds();
 //   console.log(Date().prototype.getTime());
 },100)
+
+
+// car 
+
+gas.addEventListener('click', ()=>{
+    let pos = 0;
+    setInterval(go_to_finish,100)
+    
+    function go_to_finish() {
+        if(pos>= 65){
+            clearInterval(go_to_finish)
+            car.style.left = 0 + "%"
+        }else{
+        pos++;
+        car.style.left = pos + "%"
+        }
+    }
+    
+})
 
 
 
