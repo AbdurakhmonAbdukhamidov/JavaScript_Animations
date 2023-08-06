@@ -5,9 +5,13 @@ let line = document.querySelector('.line')
 let first = document.querySelector("#third");
 let bodyHeight = window.getComputedStyle(body).height
 let title = document.querySelectorAll('.title')
-const hour = document.querySelector('.hour');
+const time = document.querySelector('.hour');
 const gas = document.querySelector('.lets_go');
 const car = document.querySelector('.car');
+let loader = document.querySelector('.loader')
+
+
+
 
 
 
@@ -36,8 +40,8 @@ title.forEach(element => {
 
 
 setInterval(()=>{
-   let time = new Date()
-  hour.innerText = time.getHours() +":"+time.getMinutes()+":"+time.getSeconds();
+  let time1 = new Date()
+  time.innerText = time1.getHours() +":"+time1.getMinutes()+":"+time1.getSeconds();
 //   console.log(Date().prototype.getTime());
 },100)
 
@@ -62,3 +66,8 @@ gas.addEventListener('click', ()=>{
 
 
 
+
+//loader 
+window.addEventListener('DOMContentLoaded',()=>{
+    setTimeout(loader.style.display= "none",20000)
+})
