@@ -5,6 +5,7 @@ let line = document.querySelector('.line')
 let first = document.querySelector("#third");
 let bodyHeight = window.getComputedStyle(body).height
 let title = document.querySelectorAll('.title')
+const hour = document.querySelector('.hour');
 
 
 
@@ -20,7 +21,7 @@ addEventListener("scroll", function(e){
 title.forEach(element => {
 
     element.addEventListener('click', ()=>{
-        console.log(element.nextElementSibling);
+        let text = element.nextElementSibling
         if(window.getComputedStyle(text).display == "block"){
             text.style.display = "none"
         }else{
@@ -30,6 +31,13 @@ title.forEach(element => {
     })
     
 });
+
+
+setInterval(()=>{
+   let time = new Date()
+  hour.innerText = time.getHours() +":"+time.getMinutes()+":"+time.getSeconds();
+//   console.log(Date().prototype.getTime());
+},100)
 
 
 
